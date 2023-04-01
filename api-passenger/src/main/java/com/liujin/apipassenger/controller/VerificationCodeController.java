@@ -5,6 +5,7 @@ import com.liujin.apipassenger.service.VerificationCodeService;
 import com.liujin.internalcommon.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,4 +20,10 @@ public class VerificationCodeController {
        String passengerphone =  verificationCodeDTO.getPassengerPhone();
         return verificationCodeService.getPassengerPhone(passengerphone);
     }
+
+    @PostMapping("/verification-code-check")
+    public ResponseResult checkVerificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO){
+        return verificationCodeService.chvckVerificationCode(verificationCodeDTO);
+    }
+
 }
