@@ -1,6 +1,7 @@
 package com.liujin.internalcommon.dto;
 
 import com.liujin.internalcommon.constant.CommonStatusEnum;
+import com.liujin.internalcommon.response.TokenResoinse;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -17,6 +18,18 @@ public class ResponseResult <T>{
                 .setCode(CommonStatusEnum.SUCCESS.getCode())
                 .setMessage(CommonStatusEnum.SUCCESS.getValue())
                 .setData(data);
+    }
+
+    public static <T> ResponseResult success(){
+        return new ResponseResult()
+                .setCode(CommonStatusEnum.SUCCESS.getCode())
+                .setMessage(CommonStatusEnum.SUCCESS.getValue());
+    }
+    public static  ResponseResult success( int code, String message, TokenResoinse token ) {
+        return new ResponseResult()
+                .setCode(CommonStatusEnum.VERIFICATION_CODE_SUCCESS.getCode())
+                .setMessage(CommonStatusEnum.SUCCESS.getValue())
+                .setData(token);
     }
 
     /**
@@ -46,4 +59,6 @@ public class ResponseResult <T>{
                 .setMessage(CommonStatusEnum.FAIL.getValue())
                 .setData(data);
     }
+
+
 }
