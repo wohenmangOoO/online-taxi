@@ -5,9 +5,10 @@ import lombok.experimental.Accessors;
 
 public enum CommonStatusEnum {
 
+    TOKEN_ERROR(1099,"token invalid"),
+
     VERIFICATION_CODE_ERROR(1099,"验证码不正确"),
     VERIFICATION_CODE_SUCCESS(1000,"验证码正确"),
-    //成功 CommonStatusEnum SUCCESS = new CommonStatusEnum();
     SUCCESS(1,"success"),
     FAIL(0,"fail");
 
