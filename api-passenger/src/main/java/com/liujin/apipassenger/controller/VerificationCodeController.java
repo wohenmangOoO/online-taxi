@@ -1,8 +1,8 @@
 package com.liujin.apipassenger.controller;
 
-import com.liujin.apipassenger.request.VerificationCodeDTO;
 import com.liujin.apipassenger.service.VerificationCodeService;
 import com.liujin.internalcommon.dto.ResponseResult;
+import com.liujin.internalcommon.request.VerificationCodeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,9 +15,10 @@ public class VerificationCodeController {
     @Autowired
     private VerificationCodeService verificationCodeService;
 
-    @GetMapping("verification-code")
+    @GetMapping("/verification-code")
     public ResponseResult verificationCode(@RequestBody VerificationCodeDTO verificationCodeDTO){
        String passengerphone =  verificationCodeDTO.getPassengerPhone();
+        System.out.println(passengerphone);
         return verificationCodeService.getPassengerPhone(passengerphone);
     }
 
