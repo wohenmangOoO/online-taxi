@@ -1,4 +1,5 @@
-package com.liujin.apipassenger.request;
+package com.liujin.internalcommon.request;
+
 
 import lombok.Data;
 
